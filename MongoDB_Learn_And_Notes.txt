@@ -1,0 +1,66 @@
+Comment and useage
+
+1) show dbs => show all databases 
+
+2) use databaseName => create database and switch to database if already created
+
+3) insertOne() => Insert data function 
+
+4) db.collectionName.insertOne()  => insertion syntax
+
+5) find() => get all data from collection
+
+6) db.colllectionName.find() = > syntax
+
+     QUERIES
+
+7) limit( limitnumber) => limit the showing data 
+
+8) db.collectionName.find().limit( limitnumbers )   => syntax
+
+9) sort() => sort the order , Its require a object
+
+10) db.collectionName.find().sort({ object }).limit() => syntax
+
+11) insertMany() => insert many data  , Its require Array of Object
+
+12) db.collectionName.insertMany([{}, {}, {}]) => syntax
+
+13) skip() => skip data 
+
+14) db.collectionName.find().skip(number) => syntax
+ 
+( COMPLEX QUERIES )
+
+15) find( { key : {  $eq : value } })  = [ $eq , $ne, $lte, $gte , $gt, $lt ]  => ALL COMPARISON OPRATOR
+
+16) $in => its a key to find mani values 
+
+17) find({age : {$in : [20, 22, 30]}})  => syntax
+
+18) $nin = not in opsite on $in
+
+19) find({age : {$nin : [20, 22, 30]}})  => syntax
+
+20) $exists => if key is exist return data 
+
+21) db.collectionName.find({age : { $exists : age }}) => syntax , its only check key is exist or not !.
+
+(   Query EX : 1 )
+
+db.students.find({age : {$gt : 20 , $lt : 22}})  => find less than 22 and grather than 20 .
+
+db.students.find({age : {$exists : true }}, {_id : 0})  => get data with out id 
+
+( OPRATOR )
+
+$and 
+
+$or 
+
+$not
+
+EX : db.students.find({$or : [ {age : {$lt : 21}}, {gender : 'female'}]}) OR Opartor " age lessthan 21 or gender is female ".
+
+
+
